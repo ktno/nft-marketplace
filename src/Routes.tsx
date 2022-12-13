@@ -1,11 +1,14 @@
+import { Home, Layout, Profile } from 'pages'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Home } from 'views'
 
 export default () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<Home />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="profile" element={<Profile />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )
