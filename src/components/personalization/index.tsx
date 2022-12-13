@@ -1,14 +1,14 @@
-import {RadioGroup} from '@headlessui/react'
-import {StarIcon} from '@heroicons/react/20/solid'
-import {Dispatch, useState} from 'react'
+import { RadioGroup } from '@headlessui/react'
+import { StarIcon } from '@heroicons/react/20/solid'
+import { Dispatch, useState } from 'react'
 
 const product = {
   name: 'Basic Tee 6-Pack',
   price: '$192',
   href: '#',
   breadcrumbs: [
-    {id: 1, name: 'Men', href: '#'},
-    {id: 2, name: 'Clothing', href: '#'},
+    { id: 1, name: 'Men', href: '#' },
+    { id: 2, name: 'Clothing', href: '#' },
   ],
   images: [
     {
@@ -29,19 +29,19 @@ const product = {
     },
   ],
   colors: [
-    {name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400'},
-    {name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400'},
-    {name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900'},
+    { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
+    { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
+    { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
   ],
   sizes: [
-    {name: 'XXS', inStock: false},
-    {name: 'XS', inStock: true},
-    {name: 'S', inStock: true},
-    {name: 'M', inStock: true},
-    {name: 'L', inStock: true},
-    {name: 'XL', inStock: true},
-    {name: '2XL', inStock: true},
-    {name: '3XL', inStock: true},
+    { name: 'XXS', inStock: false },
+    { name: 'XS', inStock: true },
+    { name: 'S', inStock: true },
+    { name: 'M', inStock: true },
+    { name: 'L', inStock: true },
+    { name: 'XL', inStock: true },
+    { name: '2XL', inStock: true },
+    { name: '3XL', inStock: true },
   ],
   description:
     'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
@@ -54,14 +54,14 @@ const product = {
   details:
     'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
 }
-const reviews = {href: '#', average: 4, totalCount: 117}
+const reviews = { href: '#', average: 4, totalCount: 117 }
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
 export const Personalization = (props: { setOpen: Dispatch<boolean> }) => {
-  const {setOpen} = props
+  const { setOpen } = props
   const [selectedColor, setSelectedColor] = useState(product.colors[0])
   const [selectedSize, setSelectedSize] = useState(product.sizes[2])
 
@@ -91,7 +91,7 @@ export const Personalization = (props: { setOpen: Dispatch<boolean> }) => {
                     aria-hidden="true"
                     className="h-5 w-4 text-gray-300"
                   >
-                    <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z"/>
+                    <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
                   </svg>
                 </div>
               </li>
@@ -109,10 +109,8 @@ export const Personalization = (props: { setOpen: Dispatch<boolean> }) => {
         </nav>
 
         {/* Image gallery */}
-        <div
-          className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-          <div
-            className="aspect-w-3 aspect-h-4 hidden overflow-hidden rounded-lg lg:block">
+        <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+          <div className="aspect-w-3 aspect-h-4 hidden overflow-hidden rounded-lg lg:block">
             <img
               src={product.images[0].src}
               alt={product.images[0].alt}
@@ -135,8 +133,7 @@ export const Personalization = (props: { setOpen: Dispatch<boolean> }) => {
               />
             </div>
           </div>
-          <div
-            className="aspect-w-4 aspect-h-5 sm:overflow-hidden sm:rounded-lg lg:aspect-w-3 lg:aspect-h-4">
+          <div className="aspect-w-4 aspect-h-5 sm:overflow-hidden sm:rounded-lg lg:aspect-w-3 lg:aspect-h-4">
             <img
               src={product.images[3].src}
               alt={product.images[3].alt}
@@ -146,11 +143,9 @@ export const Personalization = (props: { setOpen: Dispatch<boolean> }) => {
         </div>
 
         {/* Product info */}
-        <div
-          className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
+        <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-            <h1
-              className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
               {product.name}
             </h1>
           </div>
@@ -209,7 +204,7 @@ export const Personalization = (props: { setOpen: Dispatch<boolean> }) => {
                       <RadioGroup.Option
                         key={color.name}
                         value={color}
-                        className={({active, checked}) =>
+                        className={({ active, checked }) =>
                           classNames(
                             color.selectedClass,
                             active && checked ? 'ring ring-offset-1' : '',
@@ -256,14 +251,13 @@ export const Personalization = (props: { setOpen: Dispatch<boolean> }) => {
                     {' '}
                     Choose a size{' '}
                   </RadioGroup.Label>
-                  <div
-                    className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
+                  <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
                     {product.sizes.map((size) => (
                       <RadioGroup.Option
                         key={size.name}
                         value={size}
                         disabled={!size.inStock}
-                        className={({active}) =>
+                        className={({ active }) =>
                           classNames(
                             size.inStock
                               ? 'cursor-pointer bg-white text-gray-900 shadow-sm'
@@ -273,7 +267,7 @@ export const Personalization = (props: { setOpen: Dispatch<boolean> }) => {
                           )
                         }
                       >
-                        {({active, checked}) => (
+                        {({ active, checked }) => (
                           <>
                             <RadioGroup.Label as="span">
                               {size.name}
@@ -328,8 +322,7 @@ export const Personalization = (props: { setOpen: Dispatch<boolean> }) => {
             </form>
           </div>
 
-          <div
-            className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pb-16 lg:pr-8">
+          <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pb-16 lg:pr-8">
             {/* Description and details */}
             <div>
               <h3 className="sr-only">Description</h3>
